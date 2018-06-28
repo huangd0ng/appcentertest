@@ -3,6 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+import codePush from "react-native-code-push";
 
 import React, { Component } from 'react';
 import {
@@ -20,12 +21,12 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to React Native! Updated
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
@@ -37,6 +38,8 @@ export default class App extends Component<Props> {
     );
   }
 }
+
+export default codePush(App);
 
 const styles = StyleSheet.create({
   container: {
